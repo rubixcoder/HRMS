@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbHRMSModelStoreContainer" CdmEntityContainer="dbHRMSEntities">
+    <EntitySetMapping Name="tblAllotedLeaves">
+      <EntityTypeMapping TypeName="dbHRMSModel.tblAllotedLeaf">
+        <MappingFragment StoreEntitySet="tblAllotedLeaves">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="CL" ColumnName="CL" />
+          <ScalarProperty Name="PL" ColumnName="PL" />
+          <ScalarProperty Name="CompOff" ColumnName="CompOff" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployees">
+      <EntityTypeMapping TypeName="dbHRMSModel.tblEmployee">
+        <MappingFragment StoreEntitySet="tblEmployee">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="IsPermanent" ColumnName="IsPermanent" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLeaveDetails">
+      <EntityTypeMapping TypeName="dbHRMSModel.tblLeaveDetail">
+        <MappingFragment StoreEntitySet="tblLeaveDetails">
+          <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="LeaveType" ColumnName="LeaveType" />
+          <ScalarProperty Name="LeaveReason" ColumnName="LeaveReason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

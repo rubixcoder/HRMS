@@ -1,0 +1,5 @@
+C:\Users\Mayank\Documents\Visual Studio 2013\Projects\HRMS\Common\bin\Debug\Common.dll
+C:\Users\Mayank\Documents\Visual Studio 2013\Projects\HRMS\Common\bin\Debug\Common.pdb
+C:\Users\Mayank\Documents\Visual Studio 2013\Projects\HRMS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\Mayank\Documents\Visual Studio 2013\Projects\HRMS\Common\obj\Debug\Common.dll
+C:\Users\Mayank\Documents\Visual Studio 2013\Projects\HRMS\Common\obj\Debug\Common.pdb

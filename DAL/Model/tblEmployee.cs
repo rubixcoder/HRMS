@@ -21,5 +21,7 @@ namespace DAL.Model
         public string Designation { get; set; }
         public bool IsPermanent { get; set; }
         public Nullable<double> Salary { get; set; }
+        public string UserId { get; set; }
+        public string EmpImage { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace DAL.Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class dbHRMSEntities : DbContext
     {
@@ -28,5 +30,191 @@ namespace DAL.Model
         public virtual DbSet<tblAllotedLeaf> tblAllotedLeaves { get; set; }
         public virtual DbSet<tblEmployee> tblEmployees { get; set; }
         public virtual DbSet<tblLeaveDetail> tblLeaveDetails { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+    
+        public virtual ObjectResult<sp_AllotedLeaves_Result> sp_AllotedLeaves(string action, Nullable<int> id, Nullable<int> empId, Nullable<int> cL, Nullable<int> pL, Nullable<int> compOff)
+        {
+            var actionParameter = action != null ?
+                new ObjectParameter("Action", action) :
+                new ObjectParameter("Action", typeof(string));
+    
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var empIdParameter = empId.HasValue ?
+                new ObjectParameter("EmpId", empId) :
+                new ObjectParameter("EmpId", typeof(int));
+    
+            var cLParameter = cL.HasValue ?
+                new ObjectParameter("CL", cL) :
+                new ObjectParameter("CL", typeof(int));
+    
+            var pLParameter = pL.HasValue ?
+                new ObjectParameter("PL", pL) :
+                new ObjectParameter("PL", typeof(int));
+    
+            var compOffParameter = compOff.HasValue ?
+                new ObjectParameter("CompOff", compOff) :
+                new ObjectParameter("CompOff", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_AllotedLeaves_Result>("sp_AllotedLeaves", actionParameter, idParameter, empIdParameter, cLParameter, pLParameter, compOffParameter);
+        }
+    
+        public virtual ObjectResult<sp_Employee_Result> sp_Employee(string action)
+        {
+            var actionParameter = action != null ?
+                new ObjectParameter("Action", action) :
+                new ObjectParameter("Action", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Employee_Result>("sp_Employee", actionParameter);
+        }
+    
+        public virtual ObjectResult<sp_LeaveDetails_Result> sp_LeaveDetails(string action, Nullable<int> leaveId, Nullable<int> empId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string leaveType, string leaveReason)
+        {
+            var actionParameter = action != null ?
+                new ObjectParameter("Action", action) :
+                new ObjectParameter("Action", typeof(string));
+    
+            var leaveIdParameter = leaveId.HasValue ?
+                new ObjectParameter("LeaveId", leaveId) :
+                new ObjectParameter("LeaveId", typeof(int));
+    
+            var empIdParameter = empId.HasValue ?
+                new ObjectParameter("EmpId", empId) :
+                new ObjectParameter("EmpId", typeof(int));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var leaveTypeParameter = leaveType != null ?
+                new ObjectParameter("LeaveType", leaveType) :
+                new ObjectParameter("LeaveType", typeof(string));
+    
+            var leaveReasonParameter = leaveReason != null ?
+                new ObjectParameter("LeaveReason", leaveReason) :
+                new ObjectParameter("LeaveReason", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_LeaveDetails_Result>("sp_LeaveDetails", actionParameter, leaveIdParameter, empIdParameter, fromDateParameter, toDateParameter, leaveTypeParameter, leaveReasonParameter);
+        }
+    
+        public virtual int sp_AddEmployee(string userId, string empCode, string firstName, string lastName, string designation, Nullable<bool> isPermanent, Nullable<double> salary, string empImage)
+        {
+            var userIdParameter = userId != null ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(string));
+    
+            var empCodeParameter = empCode != null ?
+                new ObjectParameter("EmpCode", empCode) :
+                new ObjectParameter("EmpCode", typeof(string));
+    
+            var firstNameParameter = firstName != null ?
+                new ObjectParameter("FirstName", firstName) :
+                new ObjectParameter("FirstName", typeof(string));
+    
+            var lastNameParameter = lastName != null ?
+                new ObjectParameter("LastName", lastName) :
+                new ObjectParameter("LastName", typeof(string));
+    
+            var designationParameter = designation != null ?
+                new ObjectParameter("Designation", designation) :
+                new ObjectParameter("Designation", typeof(string));
+    
+            var isPermanentParameter = isPermanent.HasValue ?
+                new ObjectParameter("IsPermanent", isPermanent) :
+                new ObjectParameter("IsPermanent", typeof(bool));
+    
+            var salaryParameter = salary.HasValue ?
+                new ObjectParameter("Salary", salary) :
+                new ObjectParameter("Salary", typeof(double));
+    
+            var empImageParameter = empImage != null ?
+                new ObjectParameter("EmpImage", empImage) :
+                new ObjectParameter("EmpImage", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddEmployee", userIdParameter, empCodeParameter, firstNameParameter, lastNameParameter, designationParameter, isPermanentParameter, salaryParameter, empImageParameter);
+        }
+    
+        public virtual int sp_EditEmployeeDetails(Nullable<int> empID, string empCode, string firstName, string lastName, string designation, Nullable<bool> isPermanent, Nullable<double> salary, string empImage)
+        {
+            var empIDParameter = empID.HasValue ?
+                new ObjectParameter("EmpID", empID) :
+                new ObjectParameter("EmpID", typeof(int));
+    
+            var empCodeParameter = empCode != null ?
+                new ObjectParameter("EmpCode", empCode) :
+                new ObjectParameter("EmpCode", typeof(string));
+    
+            var firstNameParameter = firstName != null ?
+                new ObjectParameter("FirstName", firstName) :
+                new ObjectParameter("FirstName", typeof(string));
+    
+            var lastNameParameter = lastName != null ?
+                new ObjectParameter("LastName", lastName) :
+                new ObjectParameter("LastName", typeof(string));
+    
+            var designationParameter = designation != null ?
+                new ObjectParameter("Designation", designation) :
+                new ObjectParameter("Designation", typeof(string));
+    
+            var isPermanentParameter = isPermanent.HasValue ?
+                new ObjectParameter("IsPermanent", isPermanent) :
+                new ObjectParameter("IsPermanent", typeof(bool));
+    
+            var salaryParameter = salary.HasValue ?
+                new ObjectParameter("Salary", salary) :
+                new ObjectParameter("Salary", typeof(double));
+    
+            var empImageParameter = empImage != null ?
+                new ObjectParameter("EmpImage", empImage) :
+                new ObjectParameter("EmpImage", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EditEmployeeDetails", empIDParameter, empCodeParameter, firstNameParameter, lastNameParameter, designationParameter, isPermanentParameter, salaryParameter, empImageParameter);
+        }
+    
+        public virtual ObjectResult<sp_GetEmployeeList_Result> sp_GetEmployeeList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetEmployeeList_Result>("sp_GetEmployeeList");
+        }
+    
+        public virtual ObjectResult<sp_SelectAndDeleteEmployee_Result> sp_SelectAndDeleteEmployee(string action, Nullable<int> empId)
+        {
+            var actionParameter = action != null ?
+                new ObjectParameter("Action", action) :
+                new ObjectParameter("Action", typeof(string));
+    
+            var empIdParameter = empId.HasValue ?
+                new ObjectParameter("EmpId", empId) :
+                new ObjectParameter("EmpId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SelectAndDeleteEmployee_Result>("sp_SelectAndDeleteEmployee", actionParameter, empIdParameter);
+        }
+    
+        public virtual int sp_DeleteEmployeeById(Nullable<int> empId)
+        {
+            var empIdParameter = empId.HasValue ?
+                new ObjectParameter("EmpId", empId) :
+                new ObjectParameter("EmpId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteEmployeeById", empIdParameter);
+        }
+    
+        public virtual ObjectResult<sp_GetEmployeeById_Result> sp_GetEmployeeById(Nullable<int> empId)
+        {
+            var empIdParameter = empId.HasValue ?
+                new ObjectParameter("EmpId", empId) :
+                new ObjectParameter("EmpId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetEmployeeById_Result>("sp_GetEmployeeById", empIdParameter);
+        }
     }
 }

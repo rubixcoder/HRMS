@@ -8,3 +8,15 @@ C:\Users\Mayank\Documents\Visual Studio 2013\Projects\HRMS\DAL\bin\Debug\EntityF
 C:\Users\Mayank\Documents\Visual Studio 2013\Projects\HRMS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Mayank\Documents\Visual Studio 2013\Projects\HRMS\DAL\obj\Debug\DAL.dll
 C:\Users\Mayank\Documents\Visual Studio 2013\Projects\HRMS\DAL\obj\Debug\DAL.pdb
+E:\Projects\Work Projects\HRMS\HRMS\DAL\bin\Debug\DAL.dll.config
+E:\Projects\Work Projects\HRMS\HRMS\DAL\bin\Debug\DAL.dll
+E:\Projects\Work Projects\HRMS\HRMS\DAL\bin\Debug\DAL.pdb
+E:\Projects\Work Projects\HRMS\HRMS\DAL\bin\Debug\EntityFramework.dll
+E:\Projects\Work Projects\HRMS\HRMS\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\Work Projects\HRMS\HRMS\DAL\bin\Debug\EntityFramework.xml
+E:\Projects\Work Projects\HRMS\HRMS\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\Work Projects\HRMS\HRMS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Projects\Work Projects\HRMS\HRMS\DAL\obj\Debug\DAL.dll
+E:\Projects\Work Projects\HRMS\HRMS\DAL\obj\Debug\DAL.pdb
+E:\Projects\Work Projects\HRMS\HRMS\DAL\bin\Debug\BusinessEntities.dll
+E:\Projects\Work Projects\HRMS\HRMS\DAL\bin\Debug\BusinessEntities.pdb
